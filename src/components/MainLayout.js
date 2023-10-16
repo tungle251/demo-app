@@ -6,9 +6,9 @@ const MainLayout = ({ children }) => {
   return (
     <div className="main-layout">
       <header>
-        <ul>
+        <ul className="main-ul">
           {APP_ROUTES.map((app) => (
-            <li key={app.name}>
+            <li className="main-li" key={app.name}>
               <Link to={app.path}>{app.name}</Link>
             </li>
           ))}

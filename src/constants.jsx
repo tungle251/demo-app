@@ -1,7 +1,7 @@
 import App from "./App"
 import { ClassComponent } from "./components/ClassComponent"
-import Example10 from "./effect-demo/Example10"
 import Example9 from "./effect-demo/Example9"
+import Example10 from "./effect-demo/Example10"
 import Example1 from "./state-demo/Example1"
 import Example2 from "./state-demo/Example2"
 import Example3 from "./state-demo/Example3"
@@ -10,6 +10,9 @@ import Example5 from "./state-demo/Example5"
 import Example6 from "./state-demo/Example6"
 import Example7 from "./state-demo/Example7"
 import Example8 from "./state-demo/Example8"
+import Example12 from "./effect-demo/Example12"
+import Example11 from "./effect-demo/Example11"
+import Example13 from "./effect-demo/Example13"
 
 export const APP_ROUTES = [
   {
@@ -72,5 +75,20 @@ export const APP_ROUTES = [
     path: "/example10",
     element: <Example10 />,
     name: "Example 10",
+  },
+  {
+    path: "/example11",
+    element: <Example11 />,
+    name: "Example 11",
+  },
+  {
+    path: "/example12",
+    element: <Example12 />,
+    name: "Example 12",
+  },
+  {
+    path: "/example13",
+    element: <Example13 />,
+    name: "Example 13",
   },
 ]

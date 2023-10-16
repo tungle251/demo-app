@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react"
 import MainLayout from "../components/MainLayout"
 
-const Example9 = () => {
+const Example13 = () => {
   const [count, setCount] = useState(0)
 
+  console.log(count)
   useEffect(() => {
-    console.log("run effect")
-  })
+    const id = setInterval(() => {
+      console.log("run interval")
+      setCount(count + 1)
+    }, 500)
+    return () => {
+      clearInterval(id)
+    }
+  }, [])
 
   return (
     <MainLayout>
       Count: {count}
       <br />
-      {/* {Click me 3 times} */}
-      <button onClick={() => setCount(count + 1)}> Click me</button>
     </MainLayout>
   )
 }
 
-export default Example9
+export default Example13

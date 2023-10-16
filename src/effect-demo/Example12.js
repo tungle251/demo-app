@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react"
 import MainLayout from "../components/MainLayout"
 
-const Example9 = () => {
+const Example12 = () => {
   const [count, setCount] = useState(0)
+  const [num, setNum] = useState(0)
 
   useEffect(() => {
     console.log("run effect")
-  })
+  }, [count])
 
   return (
     <MainLayout>
       Count: {count}
       <br />
-      {/* {Click me 3 times} */}
-      <button onClick={() => setCount(count + 1)}> Click me</button>
+      <button onClick={() => setCount(count + 1)}> Click Count</button>
+      <button onClick={() => setNum(num + 1)}> Click Num</button>
     </MainLayout>
   )
 }
 
-export default Example9
+export default Example12

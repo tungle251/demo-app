@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import MainLayout from "../components/MainLayout"
 
-const Example9 = () => {
+const Example11 = () => {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
     console.log("run effect")
-  })
+  }, [])
 
   return (
     <MainLayout>
@@ -18,4 +18,4 @@ const Example9 = () => {
   )
 }
 
-export default Example9
+export default Example11

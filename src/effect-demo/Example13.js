@@ -8,7 +8,7 @@ const Example13 = () => {
   useEffect(() => {
     const id = setInterval(() => {
       console.log("run interval")
-      setCount(count + 1)
+      setCount((count) => count + 1)
     }, 500)
     return () => {
       clearInterval(id)

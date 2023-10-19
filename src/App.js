@@ -6,15 +6,27 @@ function App() {
   const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
+    const abortController = new AbortController()
     const fetchData = async () => {
-      fetch(`https://dummyjson.com/products/search?q=${searchText}`)
+      fetch(`https://dummyjson.com/products/search?q=${searchText}`, {
+        signal: abortController.signal,
+      })
         .then((res) => res.json())
         .then((data) => {
           setProducts(data.products)
         })
+        .catch((error) => {
+          if (error.name !== "AbortError") {
+            console.error(error)
+          }
+        })
     }
 
     fetchData()
+
+    return () => {
+      abortController.abort()
+    }
   }, [searchText])
 
   return (
